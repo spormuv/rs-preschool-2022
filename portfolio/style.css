@@ -113,6 +113,10 @@ html {
   margin-left: auto;
 }
 
+.nav-item {
+  padding: 0;
+}
+
 .nav-link {
   padding: 0 20px;
   text-decoration: none;
@@ -133,16 +137,8 @@ html {
   color: #bdae82;
 }
 
-.button {
-  border: none;
-  padding: 0px;
-  background-color: transparent;
-  width: 70px;
-  height: 50px;
-  margin-right: 20px;
-  color: white;
-  font-family: inherit;
-  cursor: pointer;
+.switch {
+  padding: 0 20px 0 20px;
 }
 
 .logo {
@@ -485,5 +481,64 @@ a.footer-link:hover {
 }
 
 li > img {
-  padding: 0 0 0 20px;
+  padding: 0 0 0 0;
+}
+ul > li {
+  padding: 0 20px;
+}
+
+li.inst {
+  background: url(./assets/img/inst.png) no-repeat;
+  width: 32px;
+  height: 32px;
+  transition: 0.3s;
+}
+
+li.fb {
+  background: url(./assets/img/fb.png) no-repeat;
+  width: 32px;
+  height: 32px;
+  transition: 0.3s;
+}
+
+li.tw {
+  background: url(./assets/img/tw.png) no-repeat;
+  width: 32px;
+  height: 32px;
+  transition: 0.3s;
+}
+
+li.pint {
+  background: url(./assets/img/pint.png) no-repeat;
+  width: 32px;
+  height: 32px;
+  transition: 0.3s;
+}
+
+li.inst:hover {
+  background: url(./assets/img/inst-hover.png) no-repeat;
+  width: 32px;
+  height: 32px;
+  transition: 0.3s;
+}
+
+li.fb:hover {
+  background: url(./assets/img/fb-hover.png) no-repeat;
+  width: 32px;
+  height: 32px;
+  transition: 0.3s;
+}
+
+li.tw:hover {
+  background: url(./assets/img/tw-hover.png) no-repeat;
+  width: 32px;
+  height: 32px;
+  transition: 0.3s;
+}
+
+li.pint:hover {
+  background: url(./assets/img/pint-hover.png) no-repeat;
+  width: 32px;
+  height: 32px;
+  transition: 0.3s;
 }
