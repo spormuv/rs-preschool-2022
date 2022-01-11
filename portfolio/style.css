@@ -336,6 +336,7 @@ p.text-normal-season {
 
 .button-video:hover {
   transform: scale(1.2);
+  background: url(./assets/img/play-hover-gold.png) no-repeat;
 }
 
 .section-price {
@@ -345,8 +346,7 @@ p.text-normal-season {
 .price-for {
   display: flex;
   justify-content: space-around;
-  flex-wrap: nowrap;
-  height: 505px;
+  flex-wrap: wrap;
   margin-top: 60px;
 }
 
@@ -359,6 +359,7 @@ p.text-normal-season {
   width: 450px;
   height: 505px;
   padding: 40px 0;
+  margin-bottom: 20px;
 }
 
 .description-line {
