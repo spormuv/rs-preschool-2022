@@ -1,1 +1,15 @@
-console.log('1. 10\n2. 20\n3. 40\n4. 10\n5.20');
+const icon = document.querySelector('.hamburger-menu');
+const nav = document.querySelector('.nav');
+const blackout = document.querySelector('.blackout');
+
+function addOpenClasstoMenu() {
+  icon.classList.toggle('open');
+  nav.classList.toggle('open');
+  blackout.classList.toggle('open');
+}
+
+icon.addEventListener('click', addOpenClasstoMenu);
+nav.addEventListener('click', addOpenClasstoMenu);
+
+var image = document.getElementsByClassName('zero-block__hero-bg');
+new simpleParallax(image);
