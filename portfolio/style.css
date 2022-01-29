@@ -510,6 +510,11 @@ body {
   align-items: center;
 }
 
+.portfolio__button.active {
+  color: #000;
+  background-color: #bdae82;
+}
+
 .portfolio__buttons {
   display: flex;
   flex-wrap: wrap;
