@@ -259,10 +259,12 @@ body {
 }
 .language__en {
   padding-right: 9px;
+  cursor: pointer;
 }
 
 .language__ru {
   padding-left: 8px;
+  cursor: pointer;
 }
 
 .language-active {

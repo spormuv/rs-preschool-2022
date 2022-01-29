@@ -1,3 +1,7 @@
+import i180bj from './translate.js';
+
+/*---Hamburger menu---*/
+
 const icon = document.querySelector('.hamburger-menu');
 const nav = document.querySelector('.nav');
 const blackout = document.querySelector('.blackout');
@@ -55,4 +59,19 @@ function changeBut(event) {
     portfolioBtns.children[x].classList.remove('active');
   }
   event.target.classList.add('active');
+}
+
+/*---Translation---*/
+
+const language = document.querySelectorAll('.language__items');
+const text = document.querySelectorAll('[data-i18]');
+
+language.forEach((item) => item.addEventListener('click', getTranslate));
+
+function getTranslate(event) {
+  text.forEach((item) => {
+    item.textContent = i180bj[event.target.dataset.language][item.dataset.i18];
+    language.forEach((item) => item.classList.remove('language-active'));
+    event.target.classList.add('language-active');
+  });
 }
