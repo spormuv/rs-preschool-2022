@@ -63,15 +63,56 @@ function changeBut(event) {
 
 /*---Translation---*/
 
+let lang = 'en';
+let themes = 'dark';
+
 const language = document.querySelectorAll('.language__items');
 const text = document.querySelectorAll('[data-i18]');
 
 language.forEach((item) => item.addEventListener('click', getTranslate));
-
 function getTranslate(event) {
   text.forEach((item) => {
     item.textContent = i180bj[event.target.dataset.language][item.dataset.i18];
     language.forEach((item) => item.classList.remove('language-active'));
     event.target.classList.add('language-active');
+    lang = event.target.textContent;
   });
 }
+
+function getTranslate2(lang) {
+  text.forEach((item) => {
+    item.textContent = i180bj[lang][item.dataset.i18];
+  });
+}
+
+/*---Change color theme---*/
+
+let theme = document.querySelector('.theme');
+theme.addEventListener('click', changeIcon);
+const sectTitle = document.querySelectorAll('.darkFont');
+const lines = document.querySelectorAll('.line-decoration');
+function changeIcon(event) {
+  event.target.classList.toggle('theme-dark');
+  event.target.classList.toggle('theme-light');
+  document.body.classList.toggle('light');
+  sectTitle.forEach((item) => item.classList.toggle('light-font'));
+  lines.forEach((item) => item.classList.toggle('linesDeco'));
+}
+
+/*---Locl storage---*/
+/*---Before---*/
+
+function setLocalStorage() {
+  localStorage.setItem('lang', lang);
+}
+window.addEventListener('beforeunload', setLocalStorage);
+
+/*---After---*/
+
+function getLocalStorage() {
+  if (localStorage.getItem('lang')) {
+    const lang = localStorage.getItem('lang');
+    getTranslate2(lang);
+  }
+}
+window.addEventListener('load', getLocalStorage);

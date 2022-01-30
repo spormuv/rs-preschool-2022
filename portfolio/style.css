@@ -1,10 +1,4 @@
-/*
-позиционирование
-блочная модель (размеры, отступы)
-типографика (свойства шрифта)
-оформление (цвет фона, тень)
-анимация
-*/
+/*позиционирование, размеры, шрифты*/
 
 :root {
   --bg-dark: #000000;
@@ -61,6 +55,10 @@ html {
 body {
   color: var(--white);
   background-color: var(--bg-dark);
+}
+
+.light {
+  background: #ffffff;
 }
 
 .main-container {
@@ -140,12 +138,12 @@ body {
     right: 0;
     right: -620px;
     width: calc(100vw - 148px);
-    height: 1024px;
+    height: 1019px;
     padding-top: 134px;
     padding-left: 127px;
 
-    color: var(--white);
-    background-color: var(--bg-dark);
+    color: white;
+    background-color: black;
     transition: 0.5s;
   }
 
@@ -248,6 +246,10 @@ body {
   font-weight: var(--font-weight-bold);
 }
 
+.language__items:hover {
+  color: var(--gold);
+}
+
 .link {
   color: var(--white);
   text-decoration: none;
@@ -275,6 +277,10 @@ body {
   .language__ru {
     padding-right: 20px;
     padding-left: 19px;
+    z-index: 5;
+  }
+  .language__en {
+    z-index: 5;
   }
 }
 
@@ -513,8 +519,12 @@ body {
 }
 
 .portfolio__button.active {
-  color: #000;
+  color: black;
   background-color: #bdae82;
+}
+
+.portfolio__button.active:hover {
+  color: white;
 }
 
 .portfolio__buttons {
@@ -777,6 +787,7 @@ body {
   align-items: center;
   height: 150px;
   padding: 50px auto;
+  background-color: #000000;
 
   font-family: var(--font-inter);
   font-weight: var(--font-weight-regular);
@@ -959,4 +970,38 @@ ul {
 .button-secondary:hover {
   color: var(--white);
   cursor: pointer;
+}
+
+.theme {
+  width: 45px;
+  height: 45px;
+  margin: 0 20px 0 20px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: 0.3s;
+  z-index: 5;
+}
+
+.theme-dark {
+  background-image: url('assets/svg/vector.svg');
+}
+
+.theme-light {
+  background-image: url('assets/svg/carbon.svg');
+}
+
+.theme:hover {
+  filter: var(--filter-gold);
+}
+
+.light-font {
+  background: #ffffff;
+  color: #000;
+}
+.light-font:hover {
+  color: #000;
+}
+
+.linesDeco {
+  background: black;
 }
