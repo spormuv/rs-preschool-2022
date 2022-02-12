@@ -66,7 +66,7 @@
   opacity: 0;
 }
 
-.fade {
+.unfade {
   opacity: 1;
   transition: opacity 1s;
 }
@@ -80,5 +80,22 @@ button {
   padding: 12px 25px;
   margin: 0 auto;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+/*change language*/
+
+.lang-change {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  background-color: #1ac0f3;
+  width: 50px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 22px;
+  font-weight: 600;
   cursor: pointer;
 }
