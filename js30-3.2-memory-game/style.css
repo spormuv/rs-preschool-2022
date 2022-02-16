@@ -1,0 +1,86 @@
+/*general*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  background: rgb(67, 163, 96);
+}
+
+/*footer*/
+.footer {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: grey;
+  font-size: 25px;
+  opacity: 0.8;
+  color: #000000;
+}
+
+.img-footer {
+  width: 90px;
+}
+
+.link-footer {
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.link-footer:hover {
+  color: #ffffff;
+}
+
+/*game*/
+.memory-game {
+  width: 640px;
+  height: 640px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.memory-card {
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  margin: 5px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: 0.5s;
+}
+
+.memory-card:active {
+  transform: scale(0.96);
+  transition: 0.2s;
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  position: absolute;
+  border-radius: 5px;
+  background: rgb(64, 119, 238);
+  backface-visibility: hidden;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
