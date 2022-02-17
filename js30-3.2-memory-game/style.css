@@ -63,7 +63,7 @@ main {
 
 .memory-card:active {
   transform: scale(0.96);
-  transition: 0.2s;
+  transition: 0.05s;
 }
 
 .memory-card.flip {
@@ -83,4 +83,32 @@ main {
 
 .front-face {
   transform: rotateY(180deg);
+}
+
+/*results*/
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.games-number,
+.moves-number {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 640px;
+}
+
+.cell {
+  width: 65px;
+  height: 48px;
+  background: rgba(90, 163, 211, 0.774);
+  margin: 0 2px 2px 2px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  border-radius: 5px;
 }

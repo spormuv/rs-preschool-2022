@@ -1,5 +1,6 @@
 //constants
 const cards = document.querySelectorAll('.memory-card');
+const cellMoves = document.querySelectorAll('.cell-moves');
 
 let hasFlippedCard = false;
 let lockBoard = false;
@@ -8,6 +9,17 @@ let firstCard, secondCard;
 let openPairs = 0;
 let moves = 0;
 let arr = [];
+arr.length = 10;
+
+//fill moves
+
+function fillMoves(arr) {
+  let k = 0;
+  cellMoves.forEach((item) => {
+    item.textContent = arr[k];
+    k++;
+  });
+}
 
 //flip cards
 function flipCard() {
@@ -29,15 +41,12 @@ function checkForMatch() {
   let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
   isMatch ? disableCards() : unFlipCards();
   moves++;
-  console.log('moves: ', moves);
 }
 
 function disableCards() {
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
   openPairs++;
-  console.log('openPairs:', openPairs);
-
   finish();
   resetBoard();
 }
@@ -66,21 +75,28 @@ function resetBoard() {
 cards.forEach((card) => card.addEventListener('click', flipCard));
 
 //finish
+
 function finish() {
   if (openPairs === 6) {
     setTimeout(() => {
+      arr.pop();
       arr.unshift(moves);
-      console.log(arr);
+      fillMoves(arr);
       alert('Сongratulations!\nYou did ' + moves + ' moves');
-    }, 10);
-
+      cards.forEach((item) => item.classList.remove('flip'));
+      cards.forEach((card) => card.addEventListener('click', flipCard));
+    }, 20);
+    //set local storage
+    function setLocalStorage() {
+      localStorage.setItem('arrloc', JSON.stringify(arr));
+    }
+    window.addEventListener('beforeunload', setLocalStorage);
+    //set local storage
     setTimeout(() => {
       openPairs = 0;
       moves = 0;
-    }, 20);
+    }, 50);
 
-    cards.forEach((item) => item.classList.remove('flip'));
-    cards.forEach((card) => card.addEventListener('click', flipCard));
     (function shuffle() {
       cards.forEach((card) => {
         let randomPos = Math.floor(Math.random() * 12);
@@ -89,3 +105,14 @@ function finish() {
     })();
   }
 }
+
+//get local storage
+
+function getLocalStorage() {
+  if (localStorage.getItem('arrloc')) {
+    const ar = JSON.parse(localStorage.getItem('arrloc'));
+    arr = ar.slice();
+    fillMoves(arr);
+  }
+}
+window.addEventListener('load', getLocalStorage);
