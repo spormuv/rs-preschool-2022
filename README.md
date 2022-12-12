@@ -1,4 +1,6 @@
-# Here are the educational projects from the **JS / FRONT-END course** of the [RS School](https://rs.school/) platform, completed in the learning process
+# RS School
+
+Here are finished educational projects from the **JS / FRONT-END course** of the [RS School](https://rs.school/) platform.
 
 ## These are projects:
 
